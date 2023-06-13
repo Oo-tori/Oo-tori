@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
   <title>今日の運勢</title>
   <style>
     /* CSS スタイル */
     body {
       text-align: center;
       font-family: Arial, sans-serif;
+      position: relative; /* body要素を基準にした相対位置指定 */
+      min-height: 100vh; /* ビューポートの高さいっぱいにbody要素を伸ばす */
     }
 
     button {
@@ -17,6 +18,9 @@
       color: white;
       border: none;
       cursor: pointer;
+      position: absolute; /* 相対位置指定 */
+      bottom: 20px; /* 下端から20ピクセルの位置にボタンを配置 */
+      left: 20px; /* 左端から20ピクセルの位置にボタンを配置 */
     }
 
     #result {
@@ -29,6 +33,7 @@
     #explanation {
       margin-top: 20px;
       font-size: 18px;
+      display: none;
     }
   </style>
 </head>
@@ -37,7 +42,7 @@
   <button onclick="getFortune()">占う</button>
   <div id="result" style="margin-top: 75px; font-size: 36px;"></div>
 
-  <button onclick="showExplanation()">説明</button>
+  <button onclick="toggleExplanation()">説明</button>
   <div id="explanation"></div>
 
   <script>
@@ -58,9 +63,16 @@
       return losingFortunes[randomIndex];
     }
 
-    function showExplanation() {
-      var explanation = prompt("朝一の運試しに！いい1日になりますように！(^▽^)/");
-      document.getElementById("explanation").textContent = explanation;
+    function toggleExplanation() {
+      var explanationDiv = document.getElementById("explanation");
+      if (explanationDiv.style.display === "none") {
+        var explanation = prompt("朝一の運試しに！いい1日になりますように！(^▽^)/");
+        explanationDiv.textContent = explanation;
+        explanationDiv.style.display = "block";
+      } else {
+        explanationDiv.textContent = "";
+        explanationDiv.style.display = "none";
+      }
     }
   </script>
 </body>
