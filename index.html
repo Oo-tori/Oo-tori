@@ -24,12 +24,20 @@
       font-weight: bold;
       color: #FF5722; /* 結果のテキストカラー */
     }
+
+    #explanation {
+      margin-top: 20px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
   <h1>今日の運勢を占おう！</h1>
   <button onclick="getFortune()">占う</button>
   <div id="result" style="margin-top: 75px; font-size: 36px;"></div>
+
+  <button onclick="showExplanation()">説明</button>
+  <div id="explanation"></div>
 
   <script>
     // JavaScript コード
@@ -47,6 +55,11 @@
 
       var randomIndex = Math.floor(Math.random() * losingFortunes.length);
       return losingFortunes[randomIndex];
+    }
+
+    function showExplanation() {
+      var explanation = prompt("朝一の運試しに！いい1日になりますように！(^▽^)/");
+      document.getElementById("explanation").textContent = explanation;
     }
   </script>
 </body>
