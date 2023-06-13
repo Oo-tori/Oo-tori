@@ -29,12 +29,12 @@
 <body>
   <h1>今日の運勢を占おう！</h1>
   <button onclick="getFortune()">占う</button>
-  <div id="result"></div>
+  <div id="result" style="margin-top: 50px; font-size: 36px;"></div>
 
   <script>
     // JavaScript コード
     function getFortune() {
-      var randomNumber = Math.floor(Math.random() * 100);
+      var randomNumber = Math.floor(Math.random() * 1000);
       var fortune = (randomNumber === 0) ? "素晴らしい1日です！！！" : getLosingFortune();
 
       document.getElementById("result").innerHTML = fortune;
@@ -42,26 +42,7 @@
 
     function getLosingFortune() {
       var losingFortunes = [
-        "ハズレ！W",
-        "うーん、残念！W",
-        "今日は運気低めかも！W",
-        "次回に期待しましょう！W",
-        "運勢は微妙ですねW",
-        "ガッカリ！W",
-        "不吉かもしれませんW",
-        "もっと頑張りましょう！W",
-        "運を探しましょうW",
-        "努力が必要ですW",
-        "今日はちょっと厳しいかもW",
-        "運が尽きたかもしれませんW",
-        "気を取り直して次を目指しましょうW",
-        "運命の出会いはまだ先かもしれませんね。。。わら",
-        "焦らずにゆっくり進んでくださいW",
-        "悪いことは忘れて前向きにW",
-        "....W",
-        "今日は自分を信じて！W",
-        "幸運の波がやってくるかもしれませんwww",
-        "運命の人との出会いが近いかもしれませんwwww"
+        "今日はダメダメな1日になりそうです。。。。（笑）",
       ];
 
       var randomIndex = Math.floor(Math.random() * losingFortunes.length);
