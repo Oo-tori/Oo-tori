@@ -18,42 +18,44 @@
       color: white;
       border: none;
       cursor: pointer;
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
+      margin-top: 50px;
     }
 
     #result {
-      margin-top: 100px;
+      margin-top: 20px;
       font-size: 24px;
       font-weight: bold;
       color: #FF5722;
     }
 
     #explanation {
-      margin-top: 20px;
+      margin-top: 50px;
       font-size: 18px;
       display: none;
     }
 
     #explanation-container {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     #explanation-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
       margin-right: 10px;
     }
   </style>
 </head>
 <body>
   <h1>今日の運勢を占おう！</h1>
-  <div>
-    <button class="fortune-button" onclick="getFortune()">占う</button>
-  </div>
+  <button class="fortune-button" onclick="getFortune()">占う</button>
   <div id="result"></div>
 
   <div id="explanation-container">
