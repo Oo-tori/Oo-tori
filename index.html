@@ -11,7 +11,7 @@
       min-height: 100vh; /* ビューポートの高さいっぱいにbody要素を伸ばす */
     }
 
-    button {
+    .fortune-button {
       padding: 10px 20px;
       font-size: 18px;
       background-color: #4CAF50;
@@ -39,7 +39,9 @@
 </head>
 <body>
   <h1>今日の運勢を占おう！</h1>
-  <button onclick="getFortune()">占う</button>
+  <div>
+    <button class="fortune-button" onclick="getFortune()">占う</button>
+  </div>
   <div id="result" style="margin-top: 75px; font-size: 36px;"></div>
 
   <button onclick="toggleExplanation()" style="position: absolute; bottom: 20px; left: 20px;">説明</button>
@@ -77,3 +79,4 @@
   </script>
 </body>
 </html>
+``
