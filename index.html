@@ -21,6 +21,8 @@
     #result {
       margin-top: 20px;
       font-size: 24px;
+      font-weight: bold;
+      color: #FF5722; /* 結果のテキストカラー */
     }
   </style>
 </head>
@@ -35,7 +37,7 @@
       var randomNumber = Math.floor(Math.random() * 100);
       var fortune = (randomNumber === 0) ? "素晴らしい1日です！！！" : getLosingFortune();
 
-      document.getElementById("result").innerHTML = "運勢:" + fortune + "";
+      document.getElementById("result").innerHTML = fortune;
     }
 
     function getLosingFortune() {
@@ -44,7 +46,7 @@
         "うーん、残念！W",
         "今日は運気低めかも！W",
         "次回に期待しましょう！W",
-         "運勢は微妙ですねW",
+        "運勢は微妙ですねW",
         "ガッカリ！W",
         "不吉かもしれませんW",
         "もっと頑張りましょう！W",
