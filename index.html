@@ -42,7 +42,7 @@
   <button onclick="getFortune()">占う</button>
   <div id="result" style="margin-top: 75px; font-size: 36px;"></div>
 
-  <button onclick="toggleExplanation()">説明</button>
+  <button onclick="toggleExplanation()" style="position: absolute; bottom: 20px; left: 20px;">説明</button>
   <div id="explanation"></div>
 
   <script>
@@ -66,8 +66,8 @@
     function toggleExplanation() {
       var explanationDiv = document.getElementById("explanation");
       if (explanationDiv.style.display === "none") {
-        var explanation = prompt("朝一の運試しに！いい1日になりますように！(^▽^)/");
-        explanationDiv.textContent = explanation;
+        var explanationText = "朝一の運試しに！いい1日になりますように！(^▽^)/"; // 表示する説明のテキスト
+        explanationDiv.textContent = explanationText;
         explanationDiv.style.display = "block";
       } else {
         explanationDiv.textContent = "";
