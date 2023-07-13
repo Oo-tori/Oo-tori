@@ -1,24 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo List</title>
-  <link rel="stylesheet" href="sample.css">
+  <title>おみくじ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 200px;
+      background-image: url("background.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      color: gold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+      background-color: #ffcc00;
+      color: #333333;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background-color: #ffdd33;
+    }
+
+    #result {
+      font-size: 24px;
+      color: #333333;
+      margin-top: 20px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
-
 <body>
-  <div class="app-container">
-    <h1 class="title">Todo List</h1>
-    <div class="todo-input-container">
-      <input type="text" placeholder="Enter a todo..." id="todo-input">
-      <button id="add-button">+</button>
-    </div>
-    <ul id="todo-list"></ul>
-  </div>
+  <h1>おみくじ</h1>
+  <button onclick="drawLottery()">おみくじを引く</button>
+  <p id="result"></p>
 
-  <script src="sample.js"></script>
+  <script>
+    function drawLottery() {
+      var fortunes = ["大吉", "中吉", "小吉", "吉", "凶", "大凶"];
+      var randomIndex = Math.floor(Math.random() * fortunes.length);
+      var resultElement = document.getElementById("result");
+      resultElement.innerText = "結果: " + fortunes[randomIndex];
+    }
+  </script>
 </body>
-
 </html>
