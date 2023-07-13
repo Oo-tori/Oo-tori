@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>おみくじ</title>
+  <title>お風呂に入る時間を決めよう</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 200px;
-      background-image: url("background.jpg");
-      background-size: cover;
-      background-position: center;
+      background-color: #111111;
+      overflow: hidden;
+    }
+
+    .stars {
+      width: 1px;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      animation: twinkling 10s infinite;
+    }
+
+    @keyframes twinkling {
+      from {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(1000px) rotate(360deg);
+        opacity: 0;
+      }
     }
 
     h1 {
@@ -41,17 +60,19 @@
   </style>
 </head>
 <body>
-  <h1>おみくじ</h1>
-  <button onclick="drawLottery()">おみくじを引く</button>
+  <h1>お風呂に入る時間決めよう</h1>
+  <button onclick="drawLottery()">時間をキめる！</button>
   <p id="result"></p>
 
   <script>
     function drawLottery() {
-      var fortunes = ["大吉", "中吉", "小吉", "吉", "凶", "大凶"];
+      var fortunes = ["18:00(頑張ろう！出来たら凄いよ！)", "19:00(頑張れ！頑張れ！)", "20;00(まあ、できるよね)", "21:00(できて当然だよね)", "22:00(出来ないとカスだよ)", "23：00(これで無理はカス以下だよ)"];
       var randomIndex = Math.floor(Math.random() * fortunes.length);
       var resultElement = document.getElementById("result");
       resultElement.innerText = "結果: " + fortunes[randomIndex];
     }
   </script>
+
+  <div class="stars"></div>
 </body>
 </html>
